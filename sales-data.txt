@@ -13938,3 +13938,4 @@ Date,SKU,Unit Price,Quantity,Total Price
 2019-03-31,Hot Chocolate Fudge,120,5,600
 2019-03-31,Hot Chocolate Fudge,120,5,600
 2019-03-31,Butterscotch Single Scoop,60,2,120
+2019-04-01,Caramel Crunch Single Scoop,70,4,280

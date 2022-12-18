@@ -121,3 +121,39 @@ print("For month_1: min = {}, max = {} and average = {} number of orders".format
 print("For month_2: min = {}, max = {} and average = {} number of orders".format(min(quantity_list2),max(quantity_list2),(sum(quantity_list2)/total_order2)))
 print("For month_3: min = {}, max = {} and average = {} number of orders".format(min(quantity_list3),max(quantity_list3),(sum(quantity_list3)/total_order3)))
 print("\n")
+
+
+main_list = []
+for item_name in distinct_items: # item wise total-sales
+    total = 0
+    for each in key_products:
+        total_sales_of_each = int(each[4])
+        if(item_name == each[1]):
+            total += total_sales_of_each
+
+    main_list.append((item_name, total))
+
+
+new_list = sorted(main_list, key=lambda x: x[0]) # arranged in alphabetical order
+for j in range(len(new_list)):
+    print("{}) {} : {}".format(j+1,new_list[j][0], new_list[j][1]))
+
+
+
+print("\n")
+month_data = []
+for i in range(1, 5): # month wise sales-data
+    sales_month = 0
+    for each in key_products:
+
+        month = int(each[0].split("-")[1])
+        last_value = int(each[4])
+
+        if (i == month):
+            sales_month += last_value
+    month_data.append((i, sales_month))
+
+
+print("Month : Total-sales")
+for row in month_data:
+    print("  {}   : {}".format(row[0], row[1]))
